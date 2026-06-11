@@ -1,5 +1,8 @@
 package com.charter.rewards.exception;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -10,6 +13,9 @@ public class GlobalExceptionHandler {
 
 	@ExceptionHandler(CustomerNotFoundException.class)
 	public ResponseEntity<String> handleCustomerNotFoundException(CustomerNotFoundException ex) {
+		Map<String, Object> response = new HashMap<>();
+		response.put("status", HttpStatus.NOT_FOUND.value());
+		response.put("message", ex.getMessage());
 		return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
 	}
 
