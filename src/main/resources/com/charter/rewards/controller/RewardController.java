@@ -15,18 +15,19 @@ import com.charter.rewards.service.RewardService;
 @RequestMapping("/api/rewards")
 public class RewardController {
 
-	@Autowired
-	private RewardService rewardService;
+    @Autowired
+    private RewardService rewardService;
 
-	@GetMapping("/{customerId}")
-	public CustomerRewardDto getCustomerRewards(@PathVariable Long customerId) {
+    @GetMapping("/{customerId}")
+    public CustomerRewardDto getCustomerRewards(
+            @PathVariable Long customerId) {
 
-		return rewardService.getCustomerRewards(customerId);
-	}
+        return rewardService.getCustomerRewards(customerId);
+    }
 
-	@GetMapping("/customers")
-	public List<CustomerRewardDto> getAllCustomerRewards() {
+    @GetMapping
+    public List<CustomerRewardDto> getAllCustomerRewards() {
 
-		return rewardService.getAllCustomerRewards();
-	}
+        return rewardService.getAllCustomerRewards();
+    }
 }

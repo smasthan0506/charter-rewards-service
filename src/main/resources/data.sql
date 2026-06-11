@@ -1,0 +1,9 @@
+INSERT INTO customers VALUES (101 , 'Masthan');
+INSERT INTO customers VALUES (102 , 'Suresh');
+
+INSERT INTO transactions VALUES (1,120,'2026-03-10',101),
+(2,90,'2026-04-11',101),
+(3,180,'2026-05-10',101),
+(4,110,'2026-03-05',102),
+(5,95,'2026-04-15',102),
+(6,160,'2026-05-20',102);
