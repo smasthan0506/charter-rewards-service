@@ -4,10 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
+/**
+ * Customer entity representing the customers table in the database.
+ */
 @Entity
 @Table(name = "customers")
 public class Customer {

@@ -1,10 +1,20 @@
 package com.charter.rewards.util;
 
+
+/**
+ * Utility class to calculate reward points based on the amount spent.
+ */
 public class RewardCalculator {
 
 	public RewardCalculator() {
 	}
 
+	/**
+	 * Calculate reward points based on the amount spent.
+	 * 
+	 * @param amount the amount spent
+	 * @return the calculated reward points
+	 */
 	public static int calculateRewardPoints(double amount) {
 		int points = 0;
 		if (amount > 100) {

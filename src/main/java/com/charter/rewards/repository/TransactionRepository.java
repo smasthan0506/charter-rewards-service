@@ -11,4 +11,5 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
 
 	List<Transaction> findByCustomerCustomerIdAndTransactionDateBetween(Long customerId, LocalDate startDate,
 			LocalDate endDate);
+
 }
