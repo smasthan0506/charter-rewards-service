@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionHandler {
 
 	@ExceptionHandler(CustomerNotFoundException.class)
-	public ResponseEntity<String> handleCustomerNotFoundException(CustomerNotFoundException ex) {
+	public ResponseEntity<Map<String,Object>> handleCustomerNotFoundException(CustomerNotFoundException ex) {
 		Map<String, Object> response = new HashMap<>();
 		response.put("status", HttpStatus.NOT_FOUND.value());
 		response.put("message", ex.getMessage());
-		return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
 	}
 
 }
